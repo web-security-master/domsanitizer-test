@@ -1,5 +1,5 @@
 Source code (you can also edit the text):
-<pre [textContent]="editorCode" (blur)="editorCode = $event.target['textContent']" contenteditable="true" class="editor"></pre>
+<pre [textContent]="editorCode" (blur)="update($event)" contenteditable="true" class="editor"></pre>
 <hr />
 Sanitized Code:
 <pre class="editor">{{sanitizedCode}}</pre>

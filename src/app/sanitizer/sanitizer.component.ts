@@ -44,6 +44,8 @@ export class SanitizerComponent implements OnInit {
   clean = () => {
     this.sanitizedCode = this.sanitizer.sanitize(SecurityContext.HTML, this.editorCode) || '';
     this.sanitizedRender = this.sanitizer.bypassSecurityTrustHtml(this.sanitizedCode) || '';
-  };
+  }
+
+  update = (e: Event) => this.editorCode = (e.target as HTMLElement).textContent || '';
 
 }

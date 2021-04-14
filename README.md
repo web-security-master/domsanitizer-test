@@ -2,6 +2,10 @@
 
 Enter HTML in the field at the top and see how the DomSanitizer handles the output.
 
+##
+
+It works here https://michaelsanford.com/domsanitizer-test
+
 ## Development server
 
 ```bash
