@@ -1,0 +1,45 @@
+<div class="richTextEditor" [class.hasError]="editorHasError('')">
+    <div class="richTextEditorToolbar">
+    <span class="ql-formats">
+      <button class="ql-bold editorButton" title="Bold"></button>
+      <button class="ql-italic editorButton" title="Italic"></button>
+      <button class="ql-underline editorButton" title="Underline"></button>
+      <button class="ql-strike editorButton" title="Strike"></button>
+    </span>
+        <span class="ql-formats">
+      <select class="ql-size" title="Size">
+        <option value="small"></option>
+        <option selected></option>
+        <option value="large"></option>
+        <option value="huge"></option>
+      </select>
+      <select class="ql-color" title="Color"></select>
+      <button class="ql-link editorButton" title="Link"></button>
+      <button class="ql-list editorButton" value="bullet" title="List"></button>
+    </span>
+        <span class="ql-formats">
+      <button class="ql-image editorButton" title="Image"></button>
+      <select class="ql-align" title="Alignment">
+        <option selected></option>
+        <option value="center"></option>
+        <option value="right"></option>
+      </select>
+    </span>
+        <span class="ql-formats">
+      <button class="ql-indent editorButton" value="-1" title="Unindent"></button>
+      <button class="ql-indent editorButton" value="+1" title="Indent"></button>
+    </span>
+        <span class="ql-formats">
+      <button class="editorButton" [matMenuTriggerFor]="editorTagMenu">
+        <span>Tag</span>
+        <mat-icon svgIcon="iconCaretDown"></mat-icon>
+      </button>
+      <mat-menu #editorTagMenu="matMenu" yPosition="above" xPosition="before" class="editorTagMenu">
+        <button mat-menu-item *ngFor="let tag of tagOptions; let i = index"
+                (click)="addMessageTag(tag)">{{tag.displayLabel}}</button>
+      </mat-menu>
+    </span>
+    </div>
+    <div class="editor"></div>
+    <div class="editorError" *ngIf="editorHasError('required')">Required</div>
+</div>

@@ -1,0 +1,17 @@
+Source code (you can also edit the text):
+<pre [textContent]="editorCode" (blur)="editorCode = $event.target['textContent']" contenteditable="true" class="editor"></pre>
+<hr />
+Sanitized Code:
+<pre class="editor">{{sanitizedCode}}</pre>
+<br/>
+Sanitized Render:
+<div class="editor" [innerHTML]="sanitizedRender"></div>
+<br />
+<hr/>
+
+<button (click)="editorCode = tests[0]">Test Case 1</button>
+<button (click)="editorCode = tests[1]">Test Case 2</button>
+<button (click)="editorCode = tests[2]">Test Case 3</button>
+<button (click)="editorCode = tests[3]">Test Case 4</button>
+
+<button (click)="clean()">RUN SANITIZER</button>
